@@ -304,6 +304,7 @@ body {
   background: #7d0a0a;
   padding: 4rem 0;
 }
+
 .founder-content {
   position: relative;
   left: 30px;
@@ -311,14 +312,18 @@ body {
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  flex-wrap: wrap;
 }
+
 .founder-image-container {
   position: relative;
   right: 30px;
   width: 320px;
   height: 400px;
   overflow: visible;
+  flex-shrink: 0;
 }
+
 .founder-image-bg {
   position: relative;
   background-color: #f8f9fa;
@@ -328,6 +333,7 @@ body {
   border-bottom-right-radius: 80px;
   z-index: 1;
 }
+
 .founder-image {
   position: absolute;
   bottom: -30px;
@@ -339,23 +345,77 @@ body {
   border-bottom-right-radius: 80px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
 }
+
 .founder-text {
   flex: 2;
   font-size: 1.1rem;
   line-height: 1.8;
   color: #f8f9fa;
   text-align: justify;
+  padding: 0 1rem;
 }
+
 .founder-text h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #ffffff;
 }
+
 .founder-text span {
   font-weight: bold;
   background: linear-gradient(90deg, #ff6a00, #ff7b00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+  .founder-content {
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    gap: 2rem;
+  }
+
+  .founder-image-container {
+    right: 0;
+    width: 280px;
+    height: 360px;
+  }
+
+  .founder-text {
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .founder-text h3 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .founder {
+    padding: 3rem 1rem;
+  }
+
+  .founder-image-container {
+    width: 240px;
+    height: 300px;
+  }
+
+  .founder-image {
+    bottom: -20px;
+    right: -15px;
+  }
+
+  .founder-text {
+    font-size: 1rem;
+  }
+
+  .founder-text h3 {
+    font-size: 1.5rem;
+  }
 }
 
 /* Products Section */
