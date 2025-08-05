@@ -69,15 +69,6 @@ scrollTopBtn.addEventListener("click", () => {
   });
 });
 
-// Form submission
-document.querySelector("form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert(
-    "Terima kasih! Pesan Anda telah dikirim. Kami akan menghubungi Anda segera."
-  );
-  e.target.reset();
-});
-
 // Add interactive hover effects to product and service cards
 document.querySelectorAll(".product-card, .service-card").forEach((card) => {
   card.addEventListener("mouseenter", function () {
