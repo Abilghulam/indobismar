@@ -707,6 +707,38 @@ body {
   transform: scale(1.05);
 }
 
+/* RESPONSIVE STYLES */
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .brand-partner {
+    padding: 3rem 1.5rem;
+  }
+
+  .brand-logos img {
+    width: 100px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .brand-partner {
+    padding: 2rem 1rem;
+  }
+
+  .brand-title {
+    font-size: 1.2rem;
+  }
+
+  .brand-logos {
+    gap: 1.5rem;
+  }
+
+  .brand-logos img {
+    width: 80px;
+  }
+}
+
 /* Products Section */
 .products {
   background: #f8f9fa;
