@@ -151,16 +151,20 @@ body {
   position: relative;
   z-index: 2;
   max-width: 800px;
+  width: 100%;
+  padding: 0 1rem;
   animation: fadeInUp 1s ease;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: #323232;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -172,15 +176,46 @@ body {
 }
 
 .hero p {
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+}
+
+/* Responsif: Tablet (min-width: 768px) */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsif: Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
 }
 
 /* Tombol CTA */
 .cta-button {
   display: inline-block;
-  padding: 15px 40px;
+  padding: 12px 30px; /* Default padding mobile */
+  font-size: 1rem;
   background: linear-gradient(45deg, #dc2626, #ef4444);
   color: white;
   text-decoration: none;
@@ -189,6 +224,8 @@ body {
   box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
   position: relative;
   overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .cta-button::before {
@@ -214,6 +251,22 @@ body {
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(220, 38, 38, 0.6);
+}
+
+/* Tablet (min-width: 768px) */
+@media (min-width: 768px) {
+  .cta-button {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .cta-button {
+    padding: 18px 50px;
+    font-size: 1.2rem;
+  }
 }
 
 /* Sections */
