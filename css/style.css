@@ -56,7 +56,7 @@ body {
 }
 
 .nav-link {
-  color: #555;
+  color: #000000;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
@@ -156,8 +156,14 @@ body {
 
 .hero h1 {
   font-size: 3.5rem;
-  margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #323232;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .hero .highlight {
@@ -179,7 +185,6 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 50px;
-  font-weight: bold;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
   position: relative;
