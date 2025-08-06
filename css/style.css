@@ -20,7 +20,7 @@ body {
   padding: 1rem 0;
   z-index: 1000;
   transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(220, 38, 38, 0.1);
+  border-bottom: 5px solid #dc2626;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -536,6 +536,13 @@ body {
   text-align: center;
 }
 
+.google-summary {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #a5a9b0;
+  margin-top: 2.5rem;
+}
+
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -554,7 +561,7 @@ body {
   border-radius: 2px;
 }
 
-/* Swiper Wrapper Padding (untuk efek 0.5 slide terlihat) */
+/* Swiper Wrapper Padding */
 .mySwiper {
   padding-right: 50px;
 }
@@ -649,6 +656,55 @@ body {
   .mySwiper {
     padding-right: 20px;
   }
+}
+
+/* Brand Partners Section */
+.brand-partner {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  color: #111;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.brand-title::before,
+.brand-title::after {
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background: #ddd;
+  vertical-align: middle;
+  margin: 0 15px;
+}
+
+.brand-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.brand-logos img {
+  filter: grayscale(100%);
+  opacity: 0.4;
+  width: 120px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.brand-logos img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 /* Products Section */
