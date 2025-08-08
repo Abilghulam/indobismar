@@ -725,5 +725,29 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3.3,
+        spaceBetween: 30,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1.2,
+          },
+          768: {
+            slidesPerView: 2.3,
+          },
+          1024: {
+            slidesPerView: 3.3,
+          },
+        },
+      });
+    </script>
   </body>
 </html>
