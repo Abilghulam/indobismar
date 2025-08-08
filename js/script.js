@@ -97,6 +97,29 @@ document.querySelectorAll(".product-card, .service-card").forEach((card) => {
   });
 });
 
+// Swipper auto slide
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3.3,
+  spaceBetween: 30,
+  loop: true,
+  grabCursor: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1.2,
+    },
+    768: {
+      slidesPerView: 2.3,
+    },
+    1024: {
+      slidesPerView: 3.3,
+    },
+  },
+});
+
 // Counter animation for statistics
 function animateCounter(element, target) {
   let current = 0;
