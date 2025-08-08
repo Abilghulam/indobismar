@@ -23,6 +23,23 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Add navigation bar scroll effect
+let prevScrollPos = window.pageYOffset;
+
+window.onscroll = function () {
+  const currentScrollPos = window.pageYOffset;
+
+  if (prevScrollPos > currentScrollPos) {
+    // Scroll ke atas → tampilkan navbar
+    navbar.style.top = "0";
+  } else {
+    // Scroll ke bawah → sembunyikan navbar
+    navbar.style.top = "-100px";
+  }
+
+  prevScrollPos = currentScrollPos;
+};
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {

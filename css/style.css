@@ -20,8 +20,18 @@ body {
   padding: 1rem 0;
   z-index: 1000;
   transition: all 0.3s ease;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   border-bottom: 5px solid #dc2626;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: top 0.3s;
 }
 
 .navbar.scrolled {
@@ -534,6 +544,7 @@ body {
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #f9fafb, #e5e7eb);
   text-align: center;
+  overflow: visible;
 }
 
 .google-summary {
@@ -568,20 +579,40 @@ body {
 
 /* Review Card */
 .review-card {
-  background: #ffffff;
-  padding: 2rem;
+  position: relative;
+  background: #fff;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  transform: perspective(600px);
 }
 
 .review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px) scale(1.03); /* hilangkan rotateX */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+}
+
+.review-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.2),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.review-card:hover::before {
+  opacity: 1;
 }
 
 /* Review Header */
@@ -600,11 +631,23 @@ body {
   border: 3px solid #ef4444;
 }
 
+.review-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .review-info h4 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 600;
   color: #111827;
+}
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .stars {
@@ -613,13 +656,11 @@ body {
 }
 
 .date {
-  position: absolute;
-  top: 40px;
-  right: 16px;
   font-size: 12px;
   color: #000;
   opacity: 0.3;
   font-style: italic;
+  margin-top: 3px;
 }
 
 /* Review Text */
@@ -1034,7 +1075,8 @@ body {
   background: linear-gradient(135deg, #6c757d, #3a4750, #1f2e3d);
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
-
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   color: #fff;
   padding: 40px 20px 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -1163,14 +1205,20 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
   }
 
   .footer-column {
-    text-align: center;
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: unset;
   }
 
-  .social-links {
-    justify-content: center;
+  .footer-column-map {
+    width: 100%;
+    height: 200px;
   }
 }
 
