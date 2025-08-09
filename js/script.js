@@ -43,16 +43,47 @@ window.onscroll = function () {
 // Gallery slide effect
 let next = document.querySelector(".next");
 let prev = document.querySelector(".prev");
+let slide = document.querySelector(".gallery-slide");
+let isAnimating = false;
 
-next.addEventListener("click", function () {
-  let items = document.querySelectorAll(".gallery-item");
-  document.querySelector(".gallery-slide").appendChild(items[0]);
-});
+function slideNext() {
+  if (isAnimating) return;
+  isAnimating = true;
 
-prev.addEventListener("click", function () {
-  let items = document.querySelectorAll(".gallery-item");
-  document.querySelector(".gallery-slide").prepend(items[items.length - 1]); // here the length of items = 6
-});
+  slide.style.transition = "transform 0.5s ease-in-out";
+  slide.style.transform = "translateX(-100%)";
+
+  slide.addEventListener("transitionend", function handler() {
+    slide.style.transition = "none";
+    slide.appendChild(slide.firstElementChild);
+    slide.style.transform = "translateX(0)";
+    slide.removeEventListener("transitionend", handler);
+    isAnimating = false;
+  });
+}
+
+function slidePrev() {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  slide.insertBefore(slide.lastElementChild, slide.firstElementChild);
+  slide.style.transition = "none";
+  slide.style.transform = "translateX(-100%)";
+
+  requestAnimationFrame(() => {
+    slide.style.transition = "transform 0.5s ease-in-out";
+    slide.style.transform = "translateX(0)";
+  });
+
+  slide.addEventListener("transitionend", function handler() {
+    slide.style.transition = "none";
+    slide.removeEventListener("transitionend", handler);
+    isAnimating = false;
+  });
+}
+
+next.addEventListener("click", slideNext);
+prev.addEventListener("click", slidePrev);
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
