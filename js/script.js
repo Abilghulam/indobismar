@@ -40,6 +40,20 @@ window.onscroll = function () {
   prevScrollPos = currentScrollPos;
 };
 
+// Gallery slide effect
+let next = document.querySelector(".next");
+let prev = document.querySelector(".prev");
+
+next.addEventListener("click", function () {
+  let items = document.querySelectorAll(".gallery-item");
+  document.querySelector(".gallery-slide").appendChild(items[0]);
+});
+
+prev.addEventListener("click", function () {
+  let items = document.querySelectorAll(".gallery-item");
+  document.querySelector(".gallery-slide").prepend(items[items.length - 1]); // here the length of items = 6
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
