@@ -40,6 +40,44 @@ window.onscroll = function () {
   prevScrollPos = currentScrollPos;
 };
 
+// Dropdown menu navigation bar
+// Perbaikan fungsi dropdown + panah
+function toggleDropdown() {
+  let menu = document.getElementById("dropdownMenu");
+  let arrow = document.querySelector(".nav-link svg");
+
+  // Toggle tampilan menu
+  const isOpen = menu.style.display === "block";
+  menu.style.display = isOpen ? "none" : "block";
+
+  // Rotasi panah sesuai status menu
+  if (!isOpen) {
+    arrow.classList.add("rotated");
+  } else {
+    arrow.classList.remove("rotated");
+  }
+}
+
+// Event: panah kembali saat kursor keluar
+document.querySelector(".dropdown").addEventListener("mouseleave", () => {
+  document.getElementById("dropdownMenu").style.display = "none";
+  document.querySelector(".nav-link svg").classList.remove("rotated");
+});
+
+// Toogle Text "Read More"
+function toggleText() {
+  let moreText = document.getElementById("moreText");
+  let link = document.getElementById("readMoreLink");
+
+  if (moreText.style.display === "none") {
+    moreText.style.display = "inline";
+    link.textContent = " less";
+  } else {
+    moreText.style.display = "none";
+    link.textContent = "... more";
+  }
+}
+
 // Gallery slide effect
 let next = document.querySelector(".next");
 let prev = document.querySelector(".prev");

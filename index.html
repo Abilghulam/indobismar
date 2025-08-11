@@ -55,7 +55,38 @@
         >
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
+          <li class="dropdown">
+            <a
+              href="javascript:void(0);"
+              class="nav-link"
+              onclick="toggleDropdown()"
+              >About
+              <svg
+                class="w-[12px] h-[12px] text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="none"
+                viewBox="0 0 24 24"
+                style="margin-left: 5px"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="m19 9-7 7-7-7"
+                />
+              </svg>
+            </a>
+            <ul class="dropdown-menu" id="dropdownMenu">
+              <li><a href="#about">Deskripsi</a></li>
+              <li><a href="#reviews">Rating</a></li>
+              <li><a href="#">Track Record</a></li>
+              <li><a href="#brand-partner">Brand Partner</a></li>
+            </ul>
+          </li>
           <li><a href="#founder" class="nav-link">Founder</a></li>
           <li><a href="#products" class="nav-link">Product</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
@@ -71,12 +102,6 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <!-- Video Background -->
-      <video autoplay muted loop playsinline class="hero-bg">
-        <source src="/video/bg.mp4" type="video/mp4" />
-        Browser Anda tidak mendukung video.
-      </video>
-
       <!-- Konten -->
       <div class="hero-content">
         <h1>IndoBismar <span class="highlight">Group</span><br /></h1>
@@ -85,25 +110,10 @@
           Distributor terdepan laptop, komputer, smartphone, dan peralatan IT
           berkualitas tinggi untuk kebutuhan bisnis dan personal Anda
         </p>
-        <a href="#about" class="cta-button"
-          ><svg
-            class="w-[32px] h-[32px] text-gray-800 dark:text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m19 9-7 7-7-7"
-            />
-          </svg>
-        </a>
+        <a href="#about" class="cta-button">View More </a>
+      </div>
+      <div class="hero-image">
+        <img src="img/front1.png" alt="Gambar Hero" />
       </div>
     </section>
 
@@ -111,48 +121,63 @@
     <section class="section about" id="about">
       <div class="container">
         <h2 class="section-title fade-in">About us</h2>
-        <div class="about-content">
-          <div class="about-text fade-in">
-            <p>
-              <span>PT. INDO BISMAR</span> merupakan perusahaan multinasional
-              yang bergerak di bidang penjualan grosir dan ritel perangkat
-              teknologi, meliputi laptop, komputer, smartphone, serta berbagai
-              perlengkapan IT lainnya. Sejak didirikan pada tahun 2000 di
-              Surabaya, PT. Indo Bismar terus berkembang dan memperluas
-              jangkauan bisnisnya secara signifikan.
-            </p>
-            <p>
+        <div class="about-content fade-in">
+          <div class="about-text">
+            <span id="shortText">
+              <span class="highlight">PT. INDO BISMAR</span> merupakan
+              perusahaan multinasional yang bergerak di bidang penjualan grosir
+              dan ritel perangkat teknologi, meliputi laptop, komputer,
+              smartphone, serta berbagai perlengkapan IT lainnya. Sejak
+              didirikan pada tahun 2000 di Surabaya, PT. Indo Bismar terus
+              berkembang dan memperluas jangkauan bisnisnya secara signifikan
+            </span>
+            <span id="moreText" style="display: none">
               Pada tahun 2014, kami mulai melakukan ekspansi dengan memperluas
               lini produk, termasuk smartphone, dan membuka sejumlah cabang
               ritel di berbagai kota di Jawa Timur dan Jawa Tengah. Hingga saat
               ini, kami telah memiliki 24 cabang aktif, dengan kantor pusat yang
-              berlokasi di Surabaya.
-            </p>
-            <p>
-              Dengan komitmen terhadap inovasi, kualitas layanan, dan kepuasan
-              pelanggan, PT. Indo Bismar siap menjadi mitra terpercaya dalam
-              memenuhi kebutuhan teknologi Anda, baik untuk keperluan bisnis
-              maupun personal.
-            </p>
+              berlokasi di Surabaya. Dengan komitmen terhadap inovasi, kualitas
+              layanan, dan kepuasan pelanggan, PT. Indo Bismar siap menjadi
+              mitra terpercaya dalam memenuhi kebutuhan teknologi Anda, baik
+              untuk keperluan bisnis maupun personal.
+            </span>
+            <a
+              href="javascript:void(0);"
+              id="readMoreLink"
+              onclick="toggleText()"
+              ><span class="pointer">...</span> more</a
+            >
           </div>
-          <div class="about-stats fade-in">
-            <div class="stat-item">
-              <div class="stat-number">4.8</div>
-              <div class="stars" style="margin-top: -15px">★★★★★</div>
-              <div>323 Ulasan</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">25th</div>
-              <div>Tahun Pengalaman</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">50+</div>
-              <div>Brand Partner</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">24</div>
-              <div>Retail Store</div>
-            </div>
+
+          <iframe
+            class="about-video"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/6020shHfBX4?si=QM_lf_4FXJgo39uv"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="about-stats fade-in">
+          <div class="stat-item">
+            <div class="stat-number">4.8</div>
+            <div class="stars" style="margin-top: -15px">★★★★★</div>
+            <div>323 Ulasan</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">25th</div>
+            <div>Tahun Pengalaman</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div>Brand Partner</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24</div>
+            <div>Retail Store</div>
           </div>
         </div>
       </div>
@@ -171,10 +196,6 @@
           >
             <div class="gallery-content">
               <h3 class="gallery-name">Pengadaan Laptop di Sekolah</h3>
-              <p class="gallery-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
-                eum!
-              </p>
               <button>See More</button>
             </div>
           </div>
@@ -185,10 +206,6 @@
           >
             <div class="gallery-content">
               <h3 class="gallery-name">Penjualan Laptop</h3>
-              <p class="gallery-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
-                eum!
-              </p>
               <button>See More</button>
             </div>
           </div>
@@ -199,10 +216,6 @@
           >
             <div class="gallery-content">
               <h3 class="gallery-name">Penyewaan Laptop</h3>
-              <p class="gallery-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
-                eum!
-              </p>
               <button>See More</button>
             </div>
           </div>
@@ -213,10 +226,6 @@
           >
             <div class="gallery-content">
               <h3 class="gallery-name">Praktek Kerja Lapangan</h3>
-              <p class="gallery-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
-                eum!
-              </p>
               <button>See More</button>
             </div>
           </div>
@@ -227,10 +236,6 @@
           >
             <div class="gallery-content">
               <h3 class="gallery-name">Pendampingan UKK</h3>
-              <p class="gallery-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
-                eum!
-              </p>
               <button>See More</button>
             </div>
           </div>
@@ -241,10 +246,6 @@
           >
             <div class="gallery-content">
               <h3 class="gallery-name">Industri Mengajar</h3>
-              <p class="gallery-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
-                eum!
-              </p>
               <button>See More</button>
             </div>
           </div>
@@ -289,7 +290,7 @@
     </section>
 
     <!-- Review Customer Section -->
-    <section class="reviews-section">
+    <section class="reviews-section" id="reviews">
       <h2 class="section-title fade-in">Customer Reviews</h2>
 
       <div class="swiper mySwiper fade-in">
@@ -685,7 +686,7 @@
     <!-- Business Partner -->
     <section class="section business-partner" id="business-partner">
       <div class="container">
-        <h2 class="section-title fade-in">Business Partner</h2>
+        <h2 class="section-title fade-in">Company Center</h2>
         <div class="business-partner-grid">
           <div class="business-partner-card">
             <div class="logo-wrapper">
@@ -718,7 +719,14 @@
                 alt="PT. BIZ Ponsel"
               />
             </div>
-            <p>PT. BIZ Ponsel</p>
+            <p>BIZ Ponsel</p>
+          </div>
+
+          <div class="business-partner-card">
+            <div class="logo-wrapper">
+              <img src="img/partner/bhakti.png" alt="Agrowisata Bhakti Alam" />
+            </div>
+            <p>Agrowisata Bhakti Alam</p>
           </div>
         </div>
       </div>
@@ -731,8 +739,8 @@
           <div class="footer-column">
             <h4>IndoBismar <span>Group</span></h4>
             <p>
-              Distributor terdepan laptop, komputer, smartphone, dan peralatan
-              IT berkualitas tinggi untuk kebutuhan bisnis dan personal Anda.
+              Jl. Bendul Merisi Selatan XI No.59-61, Bendul Merisi, Kec.
+              Wonocolo, Surabaya, Jawa Timur 60239.
             </p>
             <br />
           </div>
