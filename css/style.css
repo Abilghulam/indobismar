@@ -1298,6 +1298,55 @@ body {
   }
 }
 
+/* Tab Navigation Section */
+.store-section {
+  display: none;
+}
+.store-section.active {
+  display: block;
+}
+
+.store-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+}
+
+.tab-btn {
+  position: relative;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.tab-btn.active {
+  color: #333;
+}
+
+.tab-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 3px;
+  background-color: #0050ae;
+  transition: width 0.3s ease;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.tab-btn.active::after {
+  width: 100%;
+}
+
 /* Store Section */
 .section-store-laptop {
   padding: 50px 20px;
@@ -1326,14 +1375,28 @@ body {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
+  margin-bottom: 70px;
 }
 
-.gallery-grid .store-card:last-child {
-  grid-column: 2 / 3;
+.gallery-grid::after {
+  content: "";
+  display: block;
+}
+
+.gallery-grid > :nth-last-child(1):nth-child(4n + 1) ~ ::after {
+  grid-column: span 3;
+}
+
+.gallery-grid > :nth-last-child(2):nth-child(4n + 1) ~ ::after {
+  grid-column: span 2;
+}
+
+.gallery-grid > :nth-last-child(3):nth-child(4n + 1) ~ ::after {
+  grid-column: span 1;
 }
 
 .store-card {
@@ -1343,6 +1406,9 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
+  height: 100%; /* pastikan card penuh */
+  display: flex;
+  flex-direction: column;
 }
 
 .store-card:hover {
@@ -1415,11 +1481,33 @@ body {
   margin: -20px -20px 15px;
 }
 
+.modal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px;
+  gap: 20px;
+}
+
+.modal-address {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+}
+
+.modal-address i {
+  color: #dc2626;
+  margin-right: 6px;
+  font-size: 16px;
+}
+
 .social-links {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 10px 0 20px;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  margin: 0;
 }
 
 .social-links a {

@@ -139,10 +139,27 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+// Tab Navigation for retail store
+document.querySelectorAll(".tab-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    // Hilangkan active dari semua tab & section
+    document
+      .querySelectorAll(".tab-btn")
+      .forEach((btn) => btn.classList.remove("active"));
+    document
+      .querySelectorAll(".store-section")
+      .forEach((sec) => sec.classList.remove("active"));
+
+    // Aktifkan tab dan section yang dipilih
+    button.classList.add("active");
+    document.getElementById(button.dataset.target).classList.add("active");
+  });
+});
+
 // Modal retail store
 const modal = document.getElementById("store-modal");
 const modalStoreName = document.getElementById("modal-store-name");
-const modalStoreImg = document.getElementById("modal-store-img");
+const modalStoreAddress = document.getElementById("modal-address");
 const modalInstagram = document.getElementById("modal-instagram");
 const modalFacebook = document.getElementById("modal-facebook");
 const modalMap = document.getElementById("modal-map");
@@ -152,12 +169,13 @@ const closeBtn = document.querySelector(".close-btn");
 document.querySelectorAll(".btn-see").forEach((btn) => {
   btn.addEventListener("click", function () {
     const storeName = this.dataset.store;
-    const storeImg = this.dataset.img;
+    const storeAddress = this.dataset.address;
     const storeInstagram = this.dataset.instagram;
     const storeFacebook = this.dataset.facebook;
     const storeMap = this.dataset.map;
 
     modalStoreName.textContent = storeName;
+    modalStoreAddress.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${storeAddress}`;
     modalInstagram.href = storeInstagram;
     modalFacebook.href = storeFacebook;
     modalMap.src = storeMap;
