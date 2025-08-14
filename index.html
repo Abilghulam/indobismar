@@ -60,6 +60,7 @@
               href="javascript:void(0);"
               class="nav-link"
               onclick="toggleDropdown()"
+              aria-expanded="false"
               >About
               <svg
                 class="w-[12px] h-[12px] text-gray-800 dark:text-white"
@@ -81,16 +82,16 @@
               </svg>
             </a>
             <ul class="dropdown-menu" id="dropdownMenu">
-              <li><a href="#about">Deskripsi</a></li>
-              <li><a href="#reviews">Rating</a></li>
+              <li><a href="#about">Description</a></li>
+              <li><a href="#founder">Founder</a></li>
               <li><a href="#">Track Record</a></li>
               <li><a href="#brand-partner">Brand Partner</a></li>
             </ul>
           </li>
-          <li><a href="#founder" class="nav-link">Founder</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
           <li><a href="#products" class="nav-link">Product</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#store" class="nav-link">Store</a></li>
+          <li><a href="#footer" class="nav-link">Contact</a></li>
         </ul>
         <div class="mobile-menu" id="mobile-menu">
           <span class="bar"></span>
@@ -110,7 +111,7 @@
           Distributor terdepan laptop, komputer, smartphone, dan peralatan IT
           berkualitas tinggi untuk kebutuhan bisnis dan personal Anda
         </p>
-        <a href="#about" class="cta-button">View More </a>
+        <a href="#about" class="cta-button">View More</a>
       </div>
       <div class="hero-image">
         <img src="img/front1.png" alt="Gambar Hero" />
@@ -132,14 +133,16 @@
               berkembang dan memperluas jangkauan bisnisnya secara signifikan
             </span>
             <span id="moreText" style="display: none">
+              <br />
               Pada tahun 2014, kami mulai melakukan ekspansi dengan memperluas
               lini produk, termasuk smartphone, dan membuka sejumlah cabang
               ritel di berbagai kota di Jawa Timur dan Jawa Tengah. Hingga saat
               ini, kami telah memiliki 24 cabang aktif, dengan kantor pusat yang
-              berlokasi di Surabaya. Dengan komitmen terhadap inovasi, kualitas
-              layanan, dan kepuasan pelanggan, PT. Indo Bismar siap menjadi
-              mitra terpercaya dalam memenuhi kebutuhan teknologi Anda, baik
-              untuk keperluan bisnis maupun personal.
+              berlokasi di Surabaya. <br />
+              Dengan komitmen terhadap inovasi, kualitas layanan, dan kepuasan
+              pelanggan, PT. Indo Bismar siap menjadi mitra terpercaya dalam
+              memenuhi kebutuhan teknologi Anda, baik untuk keperluan bisnis
+              maupun personal.
             </span>
             <a
               href="javascript:void(0);"
@@ -183,12 +186,41 @@
       </div>
     </section>
 
+    <!-- Founder Section -->
+    <section class="section founder" id="founder">
+      <div class="container">
+        <h2 class="section-title fade-in">Founder</h2>
+        <div class="founder-content fade-in">
+          <div class="founder-image-container">
+            <div class="founder-image-bg"></div>
+            <img src="img/founder.jpg" alt="Founder" class="founder-image" />
+          </div>
+          <div class="founder-text">
+            <h3>Dr. H. Siswanto, S.Sos., M.M.</h3>
+            <p>
+              <span>PT. INDO BISMAR</span> dirintis oleh Bapak Siswanto pada
+              tahun 2000, dengan fokus awal pada bidang teknologi informasi,
+              khususnya penjualan laptop. Berbekal visi yang kuat dan semangat
+              kewirausahaan, beliau membangun fondasi perusahaan yang kokoh
+              dalam industri teknologi.
+            </p>
+            <p>
+              Memasuki tahun 2014, seiring dengan perkembangan kebutuhan pasar,
+              PT. Indo Bismar mulai melakukan ekspansi bisnis melalui strategi
+              pemasaran multiproduk, termasuk smartphone dan perangkat digital
+              lainnya. Ekspansi ini diwujudkan dengan membuka jaringan cabang
+              ritel di berbagai kota di wilayah Jawa Timur dan Jawa Tengah, yang
+              terus berkembang hingga saat ini.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Gallery Section -->
     <section class="section gallery" id="gallery">
-      <div class="container">
-        <h2 class="section-title fade-in">Documentation</h2>
-      </div>
       <div class="gallery-container fade-in">
+        <h2 class="section-title fade-in">Gallery</h2>
         <div class="gallery-slide">
           <div
             class="gallery-item"
@@ -258,41 +290,225 @@
       </div>
     </section>
 
-    <!-- Founder Section -->
-    <section class="section founder" id="founder">
+    <!-- Brand Partner Section -->
+    <section class="section brand-partner" id="brand-partner">
       <div class="container">
-        <h2 class="section-title fade-in">Founder</h2>
-        <div class="founder-content fade-in">
-          <div class="founder-image-container">
-            <div class="founder-image-bg"></div>
-            <img src="img/founder.jpg" alt="Founder" class="founder-image" />
+        <h2 class="section-title fade-in">Brand Partner</h2>
+        <div class="brand-logos fade-in">
+          <img src="img/brand/asus.png" alt="ASUS" />
+          <img src="img/brand/hp.png" alt="HP" />
+          <img src="img/brand/lenovo.png" alt="Lenovo" />
+          <img src="img/brand/dell.png" alt="Dell" />
+          <img src="img/brand/acer.png" alt="Acer" />
+          <img src="img/brand/msi.png" alt="MSI" />
+          <img src="img/brand/axioo.png" alt="Axioo" />
+          <img src="img/brand/microsoft.png" alt="Microsoft" />
+          <img src="img/brand/apple.png" alt="Apple" />
+          <img src="img/brand/samsung.png" alt="Samsung" />
+          <img src="img/brand/xiaomi.png" alt="Xiaomi" />
+          <img src="img/brand/vivo.png" alt="Vivo" />
+          <img src="img/brand/oppo.png" alt="Oppo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products" id="products">
+      <div class="container">
+        <h2 class="section-title fade-in">Our Products</h2>
+
+        <div class="product-grid">
+          <div class="product-card fade-in">
+            <div class="product-label">Penawaran Terbaik</div>
+            <div class="product-image">
+              <img src="img/product/laptop.jpg" alt="Laptop & Notebook" />
+            </div>
+            <h3 class="product-title">Laptop & Notebook</h3>
+            <button class="btn-view">View Catalog</button>
           </div>
-          <div class="founder-text">
-            <h3>Dr. H. Siswanto, S.Sos., M.M.</h3>
-            <p>
-              <span>PT. INDO BISMAR</span> dirintis oleh Bapak Siswanto pada
-              tahun 2000, dengan fokus awal pada bidang teknologi informasi,
-              khususnya penjualan laptop. Berbekal visi yang kuat dan semangat
-              kewirausahaan, beliau membangun fondasi perusahaan yang kokoh
-              dalam industri teknologi.
-            </p>
-            <p>
-              Memasuki tahun 2014, seiring dengan perkembangan kebutuhan pasar,
-              PT. Indo Bismar mulai melakukan ekspansi bisnis melalui strategi
-              pemasaran multiproduk, termasuk smartphone dan perangkat digital
-              lainnya. Ekspansi ini diwujudkan dengan membuka jaringan cabang
-              ritel di berbagai kota di wilayah Jawa Timur dan Jawa Tengah, yang
-              terus berkembang hingga saat ini.
-            </p>
+
+          <div class="product-card fade-in">
+            <div class="product-label">Penawaran Terbaik</div>
+            <div class="product-image">
+              <img src="img/product/pc.jpg" alt="Desktop Computer" />
+            </div>
+            <h3 class="product-title">Dekstop Computer</h3>
+            <button class="btn-view">View Catalog</button>
+          </div>
+
+          <div class="product-card fade-in">
+            <div class="product-label">Penawaran Terbaik</div>
+            <div class="product-image">
+              <img src="img/product/hp.jpg" alt="Smartphone" />
+            </div>
+            <h3 class="product-title">Smartphone</h3>
+            <button class="btn-view">View Catalog</button>
+          </div>
+
+          <div class="product-card fade-in">
+            <div class="product-label">Penawaran Terbaik</div>
+            <div class="product-image">
+              <img src="img/product/aksesoris.jpg" alt="IT Accessories" />
+            </div>
+            <h3 class="product-title">IT Accessories</h3>
+            <button class="btn-view">View Catalog</button>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Bar -->
+
+    <!-- Store Section -->
+    <section class="section-store-laptop">
+      <h2 class="section-title">Our Retail Store</h2>
+
+      <div class="gallery-grid">
+        <div class="store-card">
+          <img src="img/store/comp/abcomp.webp" alt="AB Computer" />
+          <div class="overlay">
+            <h3>AB Computer</h3>
+            <button
+              class="btn-see"
+              data-store="AB Computer"
+              data-instagram="https://instagram.com/abcomputer"
+              data-facebook="https://facebook.com/abcomputer"
+              data-map="https://www.google.com/maps/embed?pb=..."
+            >
+              View More
+            </button>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img src="img/store/comp/arfacomp.webp" alt="Arfa Computer" />
+          <div class="overlay">
+            <h3>Arfa Computer</h3>
+            <button
+              class="btn-see"
+              data-store="Arfa Computer"
+              data-instagram="https://instagram.com/abcomputer"
+              data-facebook="https://facebook.com/abcomputer"
+              data-map="https://www.google.com/maps/embed?pb=..."
+            >
+              View More
+            </button>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img src="img/store/comp/hanacomp.webp" alt="Hana Computer" />
+          <div class="overlay">
+            <h3>Hana Computer</h3>
+            <button
+              class="btn-see"
+              data-store="Hana Computer"
+              data-instagram="https://instagram.com/abcomputer"
+              data-facebook="https://facebook.com/abcomputer"
+              data-map="https://www.google.com/maps/embed?pb=..."
+            >
+              View More
+            </button>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img src="img/store/comp/gustikacomp.webp" alt="Gustika Computer" />
+          <div class="overlay">
+            <h3>Gustika Computer</h3>
+            <button
+              class="btn-see"
+              data-store="Gustika Computer"
+              data-instagram="https://instagram.com/abcomputer"
+              data-facebook="https://facebook.com/abcomputer"
+              data-map="https://www.google.com/maps/embed?pb=..."
+            >
+              View More
+            </button>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img src="img/store/comp/jgcomp.webp" alt="Joss Gandos Computer" />
+          <div class="overlay">
+            <h3>Joss Gandos Computer</h3>
+            <button
+              class="btn-see"
+              data-store="Joss Gandos Computer"
+              data-instagram="https://instagram.com/abcomputer"
+              data-facebook="https://facebook.com/abcomputer"
+              data-map="https://www.google.com/maps/embed?pb=..."
+            >
+              View More
+            </button>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img src="img/store/comp/assiocomp.webp" alt="Assio Computer" />
+          <div class="overlay">
+            <h3>Assio Computer</h3>
+            <button
+              class="btn-see"
+              data-store="Assio Computer"
+              data-instagram="https://instagram.com/abcomputer"
+              data-facebook="https://facebook.com/abcomputer"
+              data-map="https://www.google.com/maps/embed?pb=..."
+            >
+              View More
+            </button>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img src="img/store/comp/azharcomp.webp" alt="Azhar Computer" />
+          <div class="overlay">
+            <h3>Azhar Computer</h3>
+            <button
+              class="btn-see"
+              data-store="Azhar Computer"
+              data-instagram="https://instagram.com/abcomputer"
+              data-facebook="https://facebook.com/abcomputer"
+              data-map="https://www.google.com/maps/embed?pb=..."
+            >
+              View More
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Store -->
+    <div id="store-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="modal-store-name"></h2>
+        <div class="social-links">
+          <a id="modal-instagram" target="_blank"
+            ><i class="fab fa-instagram"></i>Instagram</a
+          >
+          <a id="modal-facebook" target="_blank"
+            ><i class="fab fa-facebook-f"></i>Facebook</a
+          >
+        </div>
+
+        <div class="map-container">
+          <iframe
+            id="modal-map"
+            src=""
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
     <!-- Review Customer Section -->
     <section class="reviews-section" id="reviews">
       <h2 class="section-title fade-in">Customer Reviews</h2>
-
       <div class="swiper mySwiper fade-in">
         <div class="swiper-wrapper">
           <!-- Review Card 1 -->
@@ -563,126 +779,6 @@
       <div class="google-summary fade-in">Ulasan Google</div>
     </section>
 
-    <!-- Brand Partner Section -->
-    <section class="section brand-partner" id="brand-partner">
-      <div class="container">
-        <h2 class="section-title fade-in">Brand Partner</h2>
-        <div class="brand-logos fade-in">
-          <img src="img/brand/asus.png" alt="ASUS" />
-          <img src="img/brand/hp.png" alt="HP" />
-          <img src="img/brand/lenovo.png" alt="Lenovo" />
-          <img src="img/brand/dell.png" alt="Dell" />
-          <img src="img/brand/acer.png" alt="Acer" />
-          <img src="img/brand/msi.png" alt="MSI" />
-          <img src="img/brand/axioo.png" alt="Axioo" />
-          <img src="img/brand/microsoft.png" alt="Microsoft" />
-          <img src="img/brand/apple.png" alt="Apple" />
-          <img src="img/brand/samsung.png" alt="Samsung" />
-          <img src="img/brand/xiaomi.png" alt="Xiaomi" />
-          <img src="img/brand/vivo.png" alt="Vivo" />
-          <img src="img/brand/oppo.png" alt="Oppo" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="section products" id="products">
-      <div class="container">
-        <h2 class="section-title fade-in">Our Products</h2>
-        <div class="product-grid">
-          <div class="product-card fade-in">
-            <div class="product-icon">💻</div>
-            <h3 class="product-title">Laptop & Notebook</h3>
-            <p>
-              Laptop untuk gaming, bisnis, dan penggunaan sehari-hari dari brand
-              ternama seperti ASUS, HP, Lenovo, dan Dell.
-            </p>
-          </div>
-          <div class="product-card fade-in">
-            <div class="product-icon">🖥️</div>
-            <h3 class="product-title">Dekstop Computer</h3>
-            <p>
-              PC rakitan dan branded untuk kebutuhan office, gaming, dan
-              workstation dengan spesifikasi terlengkap.
-            </p>
-          </div>
-          <div class="product-card fade-in">
-            <div class="product-icon">📱</div>
-            <h3 class="product-title">Smartphone</h3>
-            <p>
-              Smartphone terbaru dari berbagai brand populer dengan garansi
-              resmi dan harga bersaing.
-            </p>
-          </div>
-          <div class="product-card fade-in">
-            <div class="product-icon">⌨️</div>
-            <h3 class="product-title">IT Accessories</h3>
-            <p>
-              Keyboard, mouse, headset, speaker, dan berbagai aksesoris komputer
-              berkualitas tinggi.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section services" id="services">
-      <div class="container">
-        <h2 class="section-title fade-in">Our Services</h2>
-        <div class="services-grid">
-          <div class="service-card fade-in">
-            <div class="service-icon">🛒</div>
-            <h3>Penjualan Grosir & Retail</h3>
-            <p>
-              Melayani pembelian dalam jumlah besar maupun satuan dengan harga
-              khusus untuk reseller dan distributor.
-            </p>
-          </div>
-          <div class="service-card fade-in">
-            <div class="service-icon">🔧</div>
-            <h3>Service & Maintenance</h3>
-            <p>
-              Layanan perbaikan dan maintenance untuk semua jenis perangkat IT
-              dengan teknisi berpengalaman.
-            </p>
-          </div>
-          <div class="service-card fade-in">
-            <div class="service-icon">🚚</div>
-            <h3>Pengiriman Gratis</h3>
-            <p>
-              Layanan pengiriman gratis untuk area tertentu dan pengiriman
-              express ke seluruh Indonesia.
-            </p>
-          </div>
-          <div class="service-card fade-in">
-            <div class="service-icon">💡</div>
-            <h3>Konsultasi IT</h3>
-            <p>
-              Konsultasi gratis untuk membantu memilih perangkat IT yang sesuai
-              dengan kebutuhan dan budget.
-            </p>
-          </div>
-          <div class="service-card fade-in">
-            <div class="service-icon">🛡️</div>
-            <h3>Garansi Resmi</h3>
-            <p>
-              Semua produk dilengkapi dengan garansi resmi dari distributor dan
-              after-sales service terpercaya.
-            </p>
-          </div>
-          <div class="service-card fade-in">
-            <div class="service-icon">📞</div>
-            <h3>Customer Support 24/7</h3>
-            <p>
-              Tim customer service kami siap membantu Anda kapan saja melalui
-              telepon, email, atau WhatsApp.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Business Partner -->
     <section class="section business-partner" id="business-partner">
       <div class="container">
@@ -733,7 +829,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="container">
         <div class="footer-container">
           <div class="footer-column">
@@ -751,7 +847,7 @@
               <li><a href="#about">About</a></li>
               <li><a href="#founder">Founder</a></li>
               <li><a href="#product">Product</a></li>
-              <li><a href="#services">Services</a></li>
+              <li><a href="#services">Store</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>

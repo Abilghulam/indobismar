@@ -41,27 +41,33 @@ window.onscroll = function () {
 };
 
 // Dropdown menu navigation bar
-// Perbaikan fungsi dropdown + panah
-function toggleDropdown() {
-  let menu = document.getElementById("dropdownMenu");
-  let arrow = document.querySelector(".nav-link svg");
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdown = document.querySelector(".dropdown");
+  const toggleLink = document.querySelector(".dropdown > .nav-link");
+  const arrow = toggleLink.querySelector("svg");
 
-  // Toggle tampilan menu
-  const isOpen = menu.style.display === "block";
-  menu.style.display = isOpen ? "none" : "block";
+  // pastikan hanya 1 fungsi toggle dan JS berjalan setelah DOM siap
+  toggleLink.addEventListener("click", function (e) {
+    e.preventDefault(); // hindari follow href
+    dropdown.classList.toggle("open");
+    arrow.classList.toggle("rotated");
+  });
 
-  // Rotasi panah sesuai status menu
-  if (!isOpen) {
-    arrow.classList.add("rotated");
-  } else {
-    arrow.classList.remove("rotated");
-  }
-}
+  // klik di luar -> tutup dropdown (berguna di mobile)
+  document.addEventListener("click", function (e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("open");
+      arrow.classList.remove("rotated");
+    }
+  });
 
-// Event: panah kembali saat kursor keluar
-document.querySelector(".dropdown").addEventListener("mouseleave", () => {
-  document.getElementById("dropdownMenu").style.display = "none";
-  document.querySelector(".nav-link svg").classList.remove("rotated");
+  // resize -> reset state saat pindah ke desktop
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      dropdown.classList.remove("open");
+      arrow.classList.remove("rotated");
+    }
+  });
 });
 
 // Toogle Text "Read More"
@@ -131,6 +137,45 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       behavior: "smooth",
     });
   });
+});
+
+// Modal retail store
+const modal = document.getElementById("store-modal");
+const modalStoreName = document.getElementById("modal-store-name");
+const modalStoreImg = document.getElementById("modal-store-img");
+const modalInstagram = document.getElementById("modal-instagram");
+const modalFacebook = document.getElementById("modal-facebook");
+const modalMap = document.getElementById("modal-map");
+const closeBtn = document.querySelector(".close-btn");
+
+// Klik tombol view
+document.querySelectorAll(".btn-see").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const storeName = this.dataset.store;
+    const storeImg = this.dataset.img;
+    const storeInstagram = this.dataset.instagram;
+    const storeFacebook = this.dataset.facebook;
+    const storeMap = this.dataset.map;
+
+    modalStoreName.textContent = storeName;
+    modalInstagram.href = storeInstagram;
+    modalFacebook.href = storeFacebook;
+    modalMap.src = storeMap;
+
+    modal.style.display = "flex";
+  });
+});
+
+// Tutup modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Klik luar modal untuk tutup
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 });
 
 // Fade in animation on scroll
