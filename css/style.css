@@ -1619,10 +1619,39 @@ body {
 }
 
 /* Animasi masuk */
+
+/* Fade in atas */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 1s forwards;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade in kiri */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade in kanan */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @keyframes fadeInUp {

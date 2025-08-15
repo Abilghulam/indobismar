@@ -181,13 +181,14 @@ window.addEventListener("click", (e) => {
 
 // Fade in animation on scroll
 const observerOptions = {
-  threshold: 0.1,
+  threshold: 0.2,
   rootMargin: "0px 0px -50px 0px",
 };
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
+  entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = `${index * 0.1}s`;
       entry.target.classList.add("visible");
     }
   });
@@ -196,6 +197,15 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".fade-in").forEach((el) => {
   observer.observe(el);
 });
+
+// Atur elemen galeri agar animasinya bergantian kiri-kanan
+document.querySelectorAll(".gallery-grid .store-card").forEach((el, idx) => {
+  const directionClass = idx % 2 === 0 ? "fade-in-left" : "fade-in-right";
+  el.classList.add(directionClass);
+  observer.observe(el);
+});
+
+// Fade in for Retail Store
 
 // Scroll to top button
 const scrollTopBtn = document.getElementById("scrollTop");
