@@ -139,23 +139,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Tab Navigation for retail store
-document.querySelectorAll(".tab-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    // Hilangkan active dari semua tab & section
-    document
-      .querySelectorAll(".tab-btn")
-      .forEach((btn) => btn.classList.remove("active"));
-    document
-      .querySelectorAll(".store-section")
-      .forEach((sec) => sec.classList.remove("active"));
-
-    // Aktifkan tab dan section yang dipilih
-    button.classList.add("active");
-    document.getElementById(button.dataset.target).classList.add("active");
-  });
-});
-
 // Modal retail store
 const modal = document.getElementById("store-modal");
 const modalStoreName = document.getElementById("modal-store-name");
