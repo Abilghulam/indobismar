@@ -84,50 +84,67 @@ function toggleText() {
   }
 }
 
-// Gallery slide effect
-let next = document.querySelector(".next");
-let prev = document.querySelector(".prev");
-let slide = document.querySelector(".gallery-slide");
-let isAnimating = false;
+// Gallery Slider Infinite Loop
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".gallery-track");
+  const items = Array.from(document.querySelectorAll(".gallery-item"));
+  const prevBtn = document.querySelector(".gallery-btn.prev");
+  const nextBtn = document.querySelector(".gallery-btn.next");
 
-function slideNext() {
-  if (isAnimating) return;
-  isAnimating = true;
+  const visibleItems = 4.1;
+  const total = items.length;
 
-  slide.style.transition = "transform 0.5s ease-in-out";
-  slide.style.transform = "translateX(-100%)";
+  // Gandakan item 5x biar panjang
+  track.innerHTML = "";
+  for (let i = 0; i < 5; i++) {
+    items.forEach((item) => track.appendChild(item.cloneNode(true)));
+  }
 
-  slide.addEventListener("transitionend", function handler() {
-    slide.style.transition = "none";
-    slide.appendChild(slide.firstElementChild);
-    slide.style.transform = "translateX(0)";
-    slide.removeEventListener("transitionend", handler);
-    isAnimating = false;
+  const allItems = track.querySelectorAll(".gallery-item");
+  let index = total * 2;
+  let isAnimating = false;
+
+  // posisi awal
+  track.style.transform = `translateX(-${index * (100 / visibleItems)}%)`;
+
+  function slideTo(newIndex) {
+    isAnimating = true;
+    track.style.transition = "transform 0.5s ease-in-out";
+    index = newIndex;
+    track.style.transform = `translateX(-${index * (100 / visibleItems)}%)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (isAnimating) return;
+    slideTo(index + 1);
   });
-}
 
-function slidePrev() {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  slide.insertBefore(slide.lastElementChild, slide.firstElementChild);
-  slide.style.transition = "none";
-  slide.style.transform = "translateX(-100%)";
-
-  requestAnimationFrame(() => {
-    slide.style.transition = "transform 0.5s ease-in-out";
-    slide.style.transform = "translateX(0)";
+  prevBtn.addEventListener("click", () => {
+    if (isAnimating) return;
+    slideTo(index - 1);
   });
 
-  slide.addEventListener("transitionend", function handler() {
-    slide.style.transition = "none";
-    slide.removeEventListener("transitionend", handler);
-    isAnimating = false;
-  });
-}
+  track.addEventListener("transitionend", () => {
+    track.style.transition = "none";
 
-next.addEventListener("click", slideNext);
-prev.addEventListener("click", slidePrev);
+    // kalau sudah terlalu kanan → lompat balik ke tengah
+    if (index >= allItems.length - total) {
+      index = total * 2;
+      track.style.transform = `translateX(-${index * (100 / visibleItems)}%)`;
+    }
+
+    // kalau terlalu kiri → lompat balik ke tengah
+    if (index <= total) {
+      index = total * 2;
+      track.style.transform = `translateX(-${index * (100 / visibleItems)}%)`;
+    }
+
+    requestAnimationFrame(() => {
+      track.style.transition = "transform 0.5s ease-in-out";
+      isAnimating = false;
+    });
+  });
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
