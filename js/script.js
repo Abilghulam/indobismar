@@ -199,13 +199,13 @@ document.querySelectorAll(".fade-in").forEach((el) => {
 });
 
 // Atur elemen galeri agar animasinya bergantian kiri-kanan
-document.querySelectorAll(".gallery-grid .store-card").forEach((el, idx) => {
-  const directionClass = idx % 2 === 0 ? "fade-in-left" : "fade-in-right";
-  el.classList.add(directionClass);
-  observer.observe(el);
-});
-
-// Fade in for Retail Store
+document
+  .querySelectorAll(".gallery-grid .store-card .gallery-slide .gallery-item")
+  .forEach((el, idx) => {
+    const directionClass = idx % 2 === 0 ? "fade-in-left" : "fade-in-right";
+    el.classList.add(directionClass);
+    observer.observe(el);
+  });
 
 // Scroll to top button
 const scrollTopBtn = document.getElementById("scrollTop");
@@ -332,44 +332,6 @@ floatStyle.textContent = `
             }
         `;
 document.head.appendChild(floatStyle);
-
-// Add click effect to CTA button
-document.querySelector(".cta-button")?.addEventListener("click", function (e) {
-  // Create ripple effect
-  const ripple = document.createElement("span");
-  const rect = this.getBoundingClientRect();
-  const size = Math.max(rect.width, rect.height);
-  const x = e.clientX - rect.left - size / 2;
-  const y = e.clientY - rect.top - size / 2;
-
-  ripple.style.cssText = `
-                position: absolute;
-                width: ${size}px;
-                height: ${size}px;
-                left: ${x}px;
-                top: ${y}px;
-                background: rgba(255, 255, 255, 0.5);
-                border-radius: 50%;
-                transform: scale(0);
-                animation: ripple 0.6s linear;
-                pointer-events: none;
-            `;
-
-  this.appendChild(ripple);
-  setTimeout(() => ripple.remove(), 600);
-});
-
-// Add ripple animation CSS
-const rippleStyle = document.createElement("style");
-rippleStyle.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-document.head.appendChild(rippleStyle);
 
 // Add loading animation
 window.addEventListener("load", () => {
